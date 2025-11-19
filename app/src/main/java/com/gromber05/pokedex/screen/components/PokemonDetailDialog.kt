@@ -1,4 +1,4 @@
-package com.gromber05.pokedex.model
+package com.gromber05.pokedex.screen.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -19,6 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.gromber05.pokedex.model.Pokemon
 
 @Composable
 fun PokemonDetailDialog(
@@ -55,6 +56,21 @@ fun PokemonDetailDialog(
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.SemiBold
                     )
+                }
+
+                if (pokemon.secondaryType != null) {
+                    Spacer(Modifier.padding(2.dp))
+                    Surface(
+                        color = pokemon.secondaryType.color.copy(alpha = 0.3f),
+                        shape = MaterialTheme.shapes.small
+                    ) {
+                        Text(
+                            text = pokemon.secondaryType.displayName,
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }
                 }
 
 

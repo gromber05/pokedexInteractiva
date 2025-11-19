@@ -6,6 +6,7 @@ data class Pokemon(
     val id: Int,
     val name: String,
     val primaryType: PokemonType,
+    val secondaryType: PokemonType?,
     val description: String,
     @DrawableRes val imageRes: Int
 )

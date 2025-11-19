@@ -9,5 +9,6 @@ enum class PokemonType(val displayName: String, val color: Color) {
     NORMAL("Normal", Color(0xFFBDBDBD)),
     PSYCHIC("Psíquico", Color(0xFFEC407A)),
     FIGHTING("Lucha", Color(0xFFEF5350)),
-    GHOST("Fantasma", Color(0xFF7E57C2))
+    GHOST("Fantasma", Color(0xFF7E57C2)),
+    POISON("Veneno", Color(0xFFD010D7))
 }

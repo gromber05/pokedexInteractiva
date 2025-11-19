@@ -19,7 +19,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gromber05.pokedex.model.Pokemon
-import com.gromber05.pokedex.model.PokemonDetailDialog
+import com.gromber05.pokedex.screen.components.PokemonDetailDialog
 import com.gromber05.pokedex.screen.components.PokedexByTypeList
 import com.gromber05.pokedex.screen.components.PokedexGrid
 import com.gromber05.pokedex.screen.components.PokedexListVertical
@@ -31,6 +31,9 @@ enum class PokedexView {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PokedexMainScreen(pokemonList : List<Pokemon>) {
+    /* Estas son las variables que definen:
+    *  1. - La pantalla actual de las tres que hay
+    *  2. - El pokémon seleccionado para abrir el diálogo*/
     var currentScreen by remember { mutableStateOf(PokedexView.LIST ) }
     var selectedPokemon by remember { mutableStateOf<Pokemon?>(null) }
 
@@ -93,7 +96,7 @@ fun PokedexViewSelector(
     TabRow(
         selectedTabIndex = options.indexOfFirst { it.first == currentView }
     ) {
-        options.forEachIndexed { index, (view, title) ->
+        options.forEachIndexed { _, (view, title) ->
             Tab(
                 selected = currentView == view,
                 onClick = { onViewSelected(view) },

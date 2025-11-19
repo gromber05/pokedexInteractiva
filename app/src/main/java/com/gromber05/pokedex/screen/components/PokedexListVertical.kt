@@ -78,11 +78,21 @@ fun PokemonItem(
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold
                 )
-                Text(
-                    text = pokemon.primaryType.displayName,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = pokemon.primaryType.color
-                )
+                Row() {
+                    Text(
+                        text = pokemon.primaryType.displayName,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = pokemon.primaryType.color
+                    )
+                    Spacer(Modifier.padding(2.dp))
+                    if (pokemon.secondaryType != null) {
+                        Text(
+                            text = pokemon.secondaryType.displayName,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = pokemon.secondaryType.color
+                        )
+                    }
+                }
             }
         }
     }
