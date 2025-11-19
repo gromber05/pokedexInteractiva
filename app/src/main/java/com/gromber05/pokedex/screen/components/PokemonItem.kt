@@ -2,18 +2,13 @@ package com.gromber05.pokedex.screen.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -26,25 +21,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.gromber05.pokedex.model.Pokemon
-
-@Composable
-fun PokedexListVertical(
-    pokemonList: List<Pokemon>,
-    onPokemonClick: (Pokemon) -> Unit
-) {
-    LazyColumn(
-        modifier = Modifier.fillMaxSize(),
-        contentPadding = PaddingValues(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        items(pokemonList, key = { it.id }) { pokemon ->
-            PokemonItem(
-                pokemon = pokemon,
-                onClick = { onPokemonClick(pokemon) }
-            )
-        }
-    }
-}
 
 @Composable
 fun PokemonItem(
@@ -84,6 +60,12 @@ fun PokemonItem(
                         style = MaterialTheme.typography.bodyMedium,
                         color = pokemon.primaryType.color
                     )
+
+                    /*
+                    Este trozo de código lo que hace es que si el pokemon que le hemos pasado como variable
+                    posee dos tipos, el segundo tipo también se muestre.
+                    */
+
                     Spacer(Modifier.padding(2.dp))
                     if (pokemon.secondaryType != null) {
                         Text(

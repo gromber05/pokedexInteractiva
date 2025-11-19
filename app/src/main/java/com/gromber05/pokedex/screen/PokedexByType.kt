@@ -1,4 +1,4 @@
-package com.gromber05.pokedex.screen.components
+package com.gromber05.pokedex.screen
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -17,6 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.gromber05.pokedex.model.Pokemon
 import com.gromber05.pokedex.model.PokemonType
+import com.gromber05.pokedex.screen.components.PokemonItem
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

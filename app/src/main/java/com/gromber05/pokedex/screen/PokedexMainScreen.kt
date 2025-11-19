@@ -20,9 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gromber05.pokedex.model.Pokemon
 import com.gromber05.pokedex.screen.components.PokemonDetailDialog
-import com.gromber05.pokedex.screen.components.PokedexByTypeList
-import com.gromber05.pokedex.screen.components.PokedexGrid
-import com.gromber05.pokedex.screen.components.PokedexListVertical
 
 enum class PokedexView {
     LIST, GRID, GROUPED

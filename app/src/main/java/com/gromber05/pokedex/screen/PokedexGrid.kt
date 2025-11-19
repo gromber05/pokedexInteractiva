@@ -1,4 +1,4 @@
-package com.gromber05.pokedex.screen.components
+package com.gromber05.pokedex.screen
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -29,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.gromber05.pokedex.model.Pokemon
+import com.gromber05.pokedex.screen.components.PokemonCard
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -52,63 +53,3 @@ fun PokedexGrid(
     }
 }
 
-@Composable
-fun PokemonCard(
-    pokemon: Pokemon,
-    onClick: () -> Unit
-) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .aspectRatio(1f)
-            .clickable(onClick = onClick),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
-    ) {
-        Column(
-            modifier = Modifier
-                .padding(8.dp)
-                .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceBetween
-        ) {
-            Image(
-                painter = painterResource(id = pokemon.imageRes),
-                contentDescription = "Imagen de ${pokemon.name}",
-                contentScale = ContentScale.Fit,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Text(
-                text = pokemon.name,
-                style = MaterialTheme.typography.bodyLarge,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center
-            )
-
-            Row(
-                Modifier.padding(2.dp)
-            ) {
-                Text(
-                    text = pokemon.primaryType.displayName,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = pokemon.primaryType.color,
-                    textAlign = TextAlign.Center
-                )
-
-                if (pokemon.secondaryType != null) {
-                    Spacer(Modifier.padding(2.dp))
-                    Text(
-                        text = pokemon.secondaryType.displayName,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = pokemon.secondaryType.color,
-                        textAlign = TextAlign.Center
-                    )
-                }
-            }
-        }
-    }
-}
