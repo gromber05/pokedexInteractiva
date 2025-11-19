@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
@@ -88,12 +89,26 @@ fun PokemonCard(
                 textAlign = TextAlign.Center
             )
 
-            Text(
-                text = pokemon.primaryType.displayName,
-                style = MaterialTheme.typography.bodySmall,
-                color = pokemon.primaryType.color,
-                textAlign = TextAlign.Center
-            )
+            Row(
+                Modifier.padding(2.dp)
+            ) {
+                Text(
+                    text = pokemon.primaryType.displayName,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = pokemon.primaryType.color,
+                    textAlign = TextAlign.Center
+                )
+
+                if (pokemon.secondaryType != null) {
+                    Spacer(Modifier.padding(2.dp))
+                    Text(
+                        text = pokemon.secondaryType.displayName,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = pokemon.secondaryType.color,
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
         }
     }
 }
