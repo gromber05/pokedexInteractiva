@@ -68,5 +68,21 @@ val samplePokemon = listOf(
         secondaryType = null,
         description = "Está formado casi por completo de gas. Puede atravesar paredes.",
         imageRes = R.drawable.gastly
+    ),
+    Pokemon(
+        id = 92,
+        name = "Fletchling",
+        primaryType = PokemonType.NORMAL,
+        secondaryType = PokemonType.FLYING,
+        description = "Es muy amigable y se comunica con sus aliados mediante melodiosos gorjeos y el movimiento de su cola y sus gráciles alas.",
+        imageRes = R.drawable.fletchling
+    ),
+    Pokemon(
+        id = 92,
+        name = "Palossand",
+        primaryType = PokemonType.EARTH,
+        secondaryType = PokemonType.GHOST,
+        description = "Manipulando a la gente ha conseguido transformarse en todo un castillo de arena, lo que ha aumentado su poder maligno." ,
+        imageRes = R.drawable.palossand
     )
 )
