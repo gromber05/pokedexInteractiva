@@ -62,8 +62,9 @@ fun PokemonCard(
                 textAlign = TextAlign.Center
             )
 
-            Row(
-                Modifier.padding(2.dp)
+            Column(
+                Modifier.padding(2.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
                     text = pokemon.primaryType.displayName,

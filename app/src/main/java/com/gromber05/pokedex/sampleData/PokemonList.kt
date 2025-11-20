@@ -70,7 +70,7 @@ val samplePokemon = listOf(
         imageRes = R.drawable.gastly
     ),
     Pokemon(
-        id = 92,
+        id = 499,
         name = "Fletchling",
         primaryType = PokemonType.NORMAL,
         secondaryType = PokemonType.FLYING,
@@ -78,7 +78,7 @@ val samplePokemon = listOf(
         imageRes = R.drawable.fletchling
     ),
     Pokemon(
-        id = 92,
+        id = 675,
         name = "Palossand",
         primaryType = PokemonType.EARTH,
         secondaryType = PokemonType.GHOST,
